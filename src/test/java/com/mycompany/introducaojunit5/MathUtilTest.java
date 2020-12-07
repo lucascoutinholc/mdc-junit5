@@ -25,4 +25,34 @@ class MathUtilTest {
         assertEquals(esperado, obtido);
     }
     
+    @Test
+    void testMdcXDivisorComumP2() {
+        int a = 4;
+        int b = 2;
+        int c = 1;
+        int esperado = c;
+        int obtido = MathUtil.mdc(a, b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcXDivisorIgualAP2() {
+        int a = 8;
+        int b = 4;
+        int x = 8;
+        int esperado = b;
+        int obtido = MathUtil.mdc(a, b, x);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcXDivisorIgualBP2() {
+        int a = 8;
+        int b = 4;
+        int x = 4;
+        int esperado = x;
+        int obtido = MathUtil.mdc(a, b, x);
+        assertEquals(esperado, obtido);
+    }
+    
 }
