@@ -9,6 +9,10 @@ public class MathUtil {
             return b;
         }
         
+        if (b == 0) {
+            return a;
+        }
+        
         return -1;
     }
 
@@ -21,9 +25,9 @@ public class MathUtil {
             return c % mdc(a, b);
         } else if (a % c == 0 && (b % c) % 2 == 0) {
             return b;
+        } else {
+            return -1;
         }
-        
-        return -1;
     }
     
 }
