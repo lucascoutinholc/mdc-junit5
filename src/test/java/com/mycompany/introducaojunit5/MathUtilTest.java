@@ -93,4 +93,61 @@ class MathUtilTest {
         assertEquals(esperado, obtido);
     }
     
+    @Test
+    void testMdcCParP5() {
+        final int a = 8;
+        final int b = 1;
+        final int c = 3;
+        final int esperado = MathUtil.mdc(a * b, c);
+        final int obtido = MathUtil.mdc(a, c) * MathUtil.mdc(b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcCImparP5() {
+        final int a = 8;
+        final int b = 1;
+        final int c = 2;
+        final int esperado = MathUtil.mdc(a * b, c);
+        final int obtido = MathUtil.mdc(a, c) * MathUtil.mdc(b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcB3P5() {
+        final int a = 8;
+        final int b = 3;
+        final int c = 2;
+        final int esperado = MathUtil.mdc(a * b, c);
+        final int obtido = MathUtil.mdc(a, c) * MathUtil.mdc(b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNumerosParesP6() {
+        final int a = 4;
+        final int b = 2;
+        final int esperado = MathUtil.mdc(a, b);
+        final int obtido = MathUtil.mdc(b, a);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNumerosImparesP6() {
+        final int a = 5;
+        final int b = 3;
+        final int esperado = MathUtil.mdc(a, b);
+        final int obtido = MathUtil.mdc(b, a);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNumerosNegativosP7() {
+        final int a = -9;
+        final int b = -3;
+        final int esperado = 3;
+        final int obtido = MathUtil.mdc(a, b);
+        assertEquals(esperado, obtido);
+    }
+    
 }
