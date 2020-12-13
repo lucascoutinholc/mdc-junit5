@@ -150,4 +150,58 @@ class MathUtilTest {
         assertEquals(esperado, obtido);
     }
     
+    @Test
+    void testMdcNumeroRepetidoP8() {
+        final int a = 3;
+        final int esperado = a;
+        final int obtido = MathUtil.mdc(a, a);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNumerosRepetidosNegativoP8() {
+        final int a = -4;
+        final int esperado = -4;
+        final int obtido = MathUtil.mdc(a, a);
+        assertNotEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdc1e2IgualdadesP9() {
+        final int a = 8;
+        final int b = 6;
+        final int c = 3;
+        final int esperado = MathUtil.mdc(MathUtil.mdc(a, b), c);
+        final int obtido = MathUtil.mdc(a, MathUtil.mdc(b, c));
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdc1e3IgualdadesP9() {
+        final int a = 8;
+        final int b = 6;
+        final int c = 3;
+        final int esperado = MathUtil.mdc(a, MathUtil.mdc(b, c));
+        final int obtido = MathUtil.mdc(a, b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNumeroPrimo3P12() {
+        final int a = 4;
+        final int p = 3;
+        final int esperado = 1;
+        final int obtido = MathUtil.mdc(p, a);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNumeroPrimo113P12() {
+        final int a = 8;
+        final int p = 113;
+        final int esperado = 1;
+        final int obtido = MathUtil.mdc(p, a);
+        assertEquals(esperado, obtido);
+    }
+    
 }
