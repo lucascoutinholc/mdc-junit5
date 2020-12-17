@@ -204,4 +204,35 @@ class MathUtilTest {
         assertEquals(esperado, obtido);
     }
     
+    @Test
+    void testMdcA30B12GeralIndivisiveis() {
+        final int a = 30;
+        final int b = 12;
+        final int esperado = 6;
+        final int obtido = MathUtil.mdc(a, b);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcMultiplosValores() {
+        final int a = 30;
+        final int b = 12;
+        final int c = 4;
+        final int esperado = 2;
+        final int obtido = MathUtil.mdcVarArgs(a, b, c);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcNenhumParametro() {
+        assertThrows(IllegalArgumentException.class, 
+                () -> MathUtil.mdcVarArgs());
+    }
+    
+    @Test
+    void testMdcNulo() {
+        assertThrows(NullPointerException.class, 
+                () -> MathUtil.mdcVarArgs(null));
+    }
+    
 }
